@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bitcoin Redeem</title>
+  <style>
+:root{color-scheme:dark;--btc:#f7931a;--muted:#9aa3af}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -10%,#f7931a28,transparent 42%),#0b0e13;color:#f5f7fa;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px clamp(20px,5vw,72px);border-bottom:1px solid #252a33}
+.brand{display:flex;align-items:center;gap:11px;font-weight:850;font-size:1.1rem;letter-spacing:-.03em}
+.coin{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:var(--btc);color:#111;font-size:25px;font-weight:900}
+.network{display:flex;align-items:center;gap:8px;color:#c0c6cf;font-size:.8rem;border:1px solid #303640;padding:8px 12px;border-radius:999px}
+.dot{width:7px;height:7px;border-radius:50%;background:#3bd18a}
+main{width:min(100% - 32px,520px);margin:clamp(42px,8vh,88px) auto 48px}
+.eyebrow{text-align:center;color:#ffb84d;text-transform:uppercase;font-weight:800;font-size:.72rem;letter-spacing:.17em}
+h1{text-align:center;margin:13px 0 10px;font-size:clamp(2.1rem,6vw,3.15rem);line-height:1.05;letter-spacing:-.055em}
+.subtitle{text-align:center;color:var(--muted);line-height:1.65;max-width:390px;margin:0 auto 30px}
+.card{padding:clamp(22px,5vw,34px);border:1px solid #2b313b;border-radius:24px;background:linear-gradient(145deg,#191d25,#12151b);box-shadow:0 24px 80px #0005}
+.bitcoin-art{width:82px;height:82px;margin:0 auto 22px;border-radius:50%;display:grid;place-items:center;font-size:52px;font-weight:900;color:#17120a;background:linear-gradient(145deg,#ffd078,#f7931a 65%,#dc7800);box-shadow:0 10px 35px #f7931a25}
+.card h2{text-align:center;margin:0 0 9px;font-size:1.35rem;letter-spacing:-.025em}
+.card p{text-align:center;color:var(--muted);line-height:1.6;font-size:.94rem;max-width:340px;margin:0 auto 22px}
+.details{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-top:1px solid #2b313b;font-size:.9rem}
+.details span:first-child{color:var(--muted)}.details strong{text-align:right}.highlight{color:#ffb84d}
+button{width:100%;margin-top:22px;padding:15px 20px;border:0;border-radius:12px;background:linear-gradient(100deg,#ffbd4a,#f7931a);color:#17120a;font:inherit;font-weight:850;cursor:pointer;transition:filter .15s,transform .15s}
+button:hover{filter:brightness(1.08);transform:translateY(-1px)}button:disabled{cursor:wait;opacity:.65;transform:none}
+.status{display:none;margin-top:16px;padding:13px 14px;border-radius:10px;border:1px solid #62431e;background:#2a2015;color:#ffd49a;font-size:.9rem;line-height:1.5}.status.show{display:block}
+.footer{text-align:center;color:#727b88;font-size:.78rem;line-height:1.6;margin:22px auto 0}.footer span{color:#a5adb8}
+@media(max-width:420px){.topbar{padding:16px}.network{font-size:.7rem;padding:7px 9px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="coin">₿</div><span>Bitcoin Redeem</span></div>
+  <div class="network"><span class="dot"></span> Bitcoin network</div>
+</header>
+<main>
+  <div class="eyebrow">Digital asset redemption</div>
+  <h1>Your Bitcoin is<br>within reach.</h1>
+  <p class="subtitle">Review your redemption request and confirm when you're ready to continue.</p>
+  <section class="card" aria-labelledby="cardTitle">
+    <div class="bitcoin-art" aria-hidden="true">₿</div>
+    <h2 id="cardTitle">Redeem Bitcoin</h2>
+    <p>You're about to begin the redemption process. Take a moment to make sure you're ready.</p>
+    <div class="details"><span>Asset</span><strong>Bitcoin <span class="highlight">(BTC)</span></strong></div>
+    <div class="details"><span>Network</span><strong>Bitcoin Mainnet</strong></div>
+    <div class="details"><span>Request status</span><strong class="highlight">Awaiting confirmation</strong></div>
+    <button id="startButton" type="button">Continue to redeem →</button>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+  </section>
+  <p class="footer">₿ <span>Bitcoin-themed demo interface</span><br>This page does not connect to a wallet or process transactions.</p>
+</main>
+
+</body>
+</html>
